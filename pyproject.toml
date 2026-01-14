@@ -1,0 +1,17 @@
+[project]
+name = "my-mpv-chapter-gen-and-recognize-song"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "shazam-py>=1.0.0",
+]
+
+# 多个py文件生成 exe
+[project.scripts]
+chapter_gen = "chapter_gen:main"
+chapter_recognize = "chapter_recognize:main"
+
+[tool.setuptools]
+py-modules = ["chapter_gen", "chapter_recognize"]
