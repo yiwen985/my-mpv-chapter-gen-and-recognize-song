@@ -49,6 +49,8 @@ def detect_silence(path):
                 start = float(match.group(1))
         elif "silence_end" in line:
             end = float(re.search(r"silence_end: (\d+(\.\d+)?)", line).group(1))
+            if start is None:
+                start = 0.0
             silence.append((start, end))
             start = None
 
